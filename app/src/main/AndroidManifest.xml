@@ -24,7 +24,6 @@
             android:name=".MovieDetail"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".MovieItemDetailActivity"
             android:label="@string/title_movieitem_detail"
@@ -34,6 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MovieItemListActivity" />
         </activity>
+        <activity android:name=".SavedActivity"></activity>
     </application>
 
 </manifest>

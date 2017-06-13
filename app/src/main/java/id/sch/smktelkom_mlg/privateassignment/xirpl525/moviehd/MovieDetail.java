@@ -2,6 +2,7 @@ package id.sch.smktelkom_mlg.privateassignment.xirpl525.moviehd;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -13,8 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -23,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -42,6 +47,12 @@ public class MovieDetail extends AppCompatActivity {
     ImageView imageView, imageView2;
     RecyclerView listView;
     int movie_id = 0;
+
+    public static byte[] getBitmapAsByteArray(Bitmap bitmap) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+        return outputStream.toByteArray();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +104,21 @@ public class MovieDetail extends AppCompatActivity {
         txtYear.setText(release_date.split("-")[0]);
         txtTitle.setText(intent.getStringExtra("title"));
         txtDuration.setText("Rating : " + String.valueOf(intent.getFloatExtra("duration", 0)));
+
+        //Save button
+        Button btSave = (Button) findViewById(R.id.buttonSave);
+        btSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MovieDetail.this, txtTitle.getText() + " " + txtSinopsis.getText(), Toast.LENGTH_SHORT).show();
+                DatabaseHelper db = new DatabaseHelper(MovieDetail.this);
+                if (db.saveMovie(txtTitle.getText().toString(), txtSinopsis.getText().toString())) {
+                    Toast.makeText(MovieDetail.this, "Berhasil menyimpan", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MovieDetail.this, "Gagal Menyimpan", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         txtRelase.setText("Release on " + intent.getStringExtra("release"));
         txtSinopsis.setText(intent.getStringExtra("sinopsis"));

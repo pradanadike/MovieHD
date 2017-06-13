@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         "Highest Rate Movies",
                         "Now Playing Movies",
                         "Upcoming Movies",
+                        "Saved",
                 }));
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                     FetchMovies fetchMovies = new FetchMovies();
                     String url = "http://api.themoviedb.org/3/movie/upcoming";
                     fetchMovies.execute(url);
+                }else if (position == 4) {
+                    //hehe
+                    startActivity(new Intent(MainActivity.this, SavedActivity.class));
                 }
 
                 getSupportFragmentManager().beginTransaction()
