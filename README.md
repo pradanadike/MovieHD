@@ -1,5 +1,5 @@
 ## MovieHD
-Link APK Release : https://drive.google.com/open?id=0B2zKeWJIDxYvXzhYcHk2T3daMlk
+Link APK Release : https://drive.google.com/open?id=0BzalEc5hFVbGZXhfSENTOVdFYTQ
 
 ## Identitas Siswa
 Nama lengkap    : Pradana Dike Rochmad Izzulhaq <br>
@@ -15,14 +15,15 @@ https://www.themoviedb.org/documentation/api
 Action Bar Spinner
 
 #### Library yang digunakan pada Aplikasi:
-Volley, Glide, SQLite
+Volley, Glide, SQLite DatabaseHelper
 
 #### Deskripsi Singkat :
-MyMovies merupakan aplikasi yang berfungsi untuk memudahkan seseorang dalam melihat film-film yang sedang tayang maupun film yang akan datang.
+MovieHD merupakan aplikasi yang berfungsi untuk memudahkan seseorang dalam melihat film-film yang sedang tayang maupun film yang akan datang.
 Selain itu, pengguna juga dapat mengetahui film-film terpopuler menurut rating tertinggi suatu film.
 
-#### Kelabihan aplikasi :
+#### Kelebihan aplikasi :
 Pada aplikasi ini juga disediakan daftar trailer di setiap detail filmnya, pengguna akan diarahkan ke video trailer film ke YouTube.
+Bisa menyimpan film yang disukai
 
 ## Screenshot
 Tampilan Utama | Spinner Movies
@@ -32,3 +33,7 @@ Tampilan Utama | Spinner Movies
 Movie Detail | Trailer Movie
 ------------ | -------------
 <img src="https://cloud.githubusercontent.com/assets/22128141/26058290/6c4e99b4-39a7-11e7-809d-77fd6310a98f.png" width="300" height="500" />|<img src="https://cloud.githubusercontent.com/assets/22128141/26058262/513646ae-39a7-11e7-84a9-cfed971766fa.png" width="300" height="500" />
+
+Button Save | Database Film
+------------ | -------------
+<img src="https://user-images.githubusercontent.com/22128141/27067922-78c3d21c-5037-11e7-9902-fc0b85fa69dd.png" width="300" height="500" />|<img src="https://user-images.githubusercontent.com/22128141/27067921-78c125da-5037-11e7-8d61-1e51c4d337f9.png" width="300" height="500" />
